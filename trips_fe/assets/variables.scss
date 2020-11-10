@@ -1,0 +1,25 @@
+@import 'http://fonts.googleapis.com/css?family=Roboto:400,700';
+
+$icon-color: #6930c3;
+$btn-color: #5e60ce;
+$text-color: #fff;
+$text-background: #7400b8;
+
+@mixin container {
+  font-family: 'Roboto', sans-serif;
+}
+
+@mixin small-container {
+  @include container;
+  padding: 2% 4% 0 4%;
+};
+
+@mixin big-container {
+  @include container;
+  padding: 0 2% 0 2%;
+}
+
+@mixin text--opaque {
+  font-size: 0.875rem; 
+  color: rgba(0, 0, 0, 0.6);
+}
