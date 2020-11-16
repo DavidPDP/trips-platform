@@ -101,3 +101,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated', )
 }
+
+MIGRATION_MODULES = {
+    'admin': None
+}
