@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <v-app-bar style="display: flex; justify-content: flex-end;" dense fixed app src="/banner.jpg">
+    <v-app-bar dense style="display: flex; justify-content: flex-end;" fixed app src="/banner.jpg">
       <v-menu bottom min-width="300px" rounded offset-y>
         <template v-slot:activator="{ on }">
           <v-btn icon x-large v-on="on">
@@ -51,11 +51,14 @@
     $auth: any;
     $router: any;
     avatar: string = '';
-    currentUser: User = { username: '' };
+    currentUser: User = { username: '', email: '' };
     
     mounted(){
-      this.avatar = this.$store.getters['user/avatar'];
-      this.currentUser = this.$auth.$storage.getCookie('user');
+      if(process.client) {
+        this.avatar = this.$store.getters['user/avatar'];
+        this.currentUser = this.$auth.$storage.getCookie('user');
+        console.log(this.currentUser);
+      }
     }
   
     trips() {
@@ -67,6 +70,7 @@
     };
 
     logout() {
+      this.$auth.$storage.setCookie('user', '');
       this.$auth.logout();
       this.$router.push({path:'/'});
     };

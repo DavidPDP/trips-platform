@@ -5,7 +5,7 @@
       <div class="new-offer__content">
         <div class="new-offer__header">
           <v-avatar>
-            <img src="https://cdn.vuetifyjs.com/images/john.jpg">
+            <img :src="avatar">
           </v-avatar>
           <b>{{ currentUser.username }}</b>
         </div><br>
@@ -46,8 +46,7 @@
 
     @PropSync('newOffer', { type: Boolean }) syncedDialog!: boolean;
 
-    files: File[] = [];
-    images: string[] = [];
+    avatar = this.$store.getters['user/avatar'];
     tripData = {
       description: '', price: '', headerDescription: '', 
       long_days: '', location: ''

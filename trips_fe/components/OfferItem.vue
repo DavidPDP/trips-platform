@@ -15,7 +15,7 @@
           <v-icon medium color="#6930c3" class="mr-2"> mdi-currency-usd </v-icon>
           <label>{{ tripData.price }} COP</label>
         </div>
-        <div>
+        <div class="offer-item__icons">
           <v-icon medium color="#6930c3" class="mr-2" @click="switchInfoPanel('guide-data')"> mdi-information-outline </v-icon>
           <v-icon medium color="#6930c3" class="mr-2" @click="switchInfoPanel('location-data')"> mdi-google-maps </v-icon>
           <v-icon medium color="#6930c3" class="mr-2" @click="switchInfoPanel('pictures')"> mdi-camera </v-icon>
@@ -134,9 +134,10 @@
     }
 
     .offer-item__header__info {
+      width: 100vw;
       display: flex;
       flex-direction: column;
-      padding: 0 0 0 2%
+      padding: 0 0 0 2%;
     }
 
   }
@@ -161,10 +162,11 @@
     }
 
     .offer-item__price {
+      width: 40vw;
       padding: 0 0 0 2%;
       
       label {
-        margin: 0 0 0 -10%;
+        margin: 0 0 0 -2%;
       }
     }
 

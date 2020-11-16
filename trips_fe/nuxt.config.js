@@ -29,7 +29,7 @@ export default {
     '@nuxtjs/auth-next'
   ],
 
-  axios: { baseURL: 'http://localhost:8000' },
+  axios: { baseURL: process.env.BASE_URL || 'http://localhost:8000' },
 
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
@@ -51,12 +51,7 @@ export default {
 
   auth: {
     localStorage: false,
-    redirect: {
-      login: '/',
-      logout: '/',
-      callback: '/',
-      home: '/home',
-    },
+    redirect: { login: '/', logout: '/', callback: '/', home: '/' },
     strategies: {
       local: {
         scheme: 'refresh',

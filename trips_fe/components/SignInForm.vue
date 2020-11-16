@@ -46,7 +46,7 @@
         await this.$auth.loginWith('local', { data:this.currentUserData });
         let user = await TripBeAPI.getUser(this.currentUserData.username);
         this.currentUserData = { username:'', password:'' }; //clean sensitive data
-        this.$auth.$storage.setCookie('user', user, true);
+        await this.$auth.$storage.setCookie('user', user, true);
         this.$router.push('home');
         
       }catch(error){
