@@ -63,16 +63,48 @@
   .main-container {
     display: flex;
     display: -ms-flexbox;
-    flex-direction: row;
-    -ms-flex-direction: row;
     overflow: hidden;
+  }
+
+  @media(min-width: 576px) {
+    .main-container {
+      flex-direction: row;
+      -ms-flex-direction: row;
+
+      .auth-sidebar{
+        width: 70%;
+        height: 100vh;
+      }
+
+      .auth-content{
+        width: 100%;
+        height: 70%;
+      }
+
+    }
+  }
+
+  @media(max-width: 768px) {
+    .main-container {
+      flex-direction: column;
+      -ms-flex-direction: column;
+      
+      .auth-sidebar{
+        width: 100vw;
+        height: 30%;
+      }
+
+      .auth-content{
+        width: 100vw;
+        height: 70%;
+      }
+
+    }
   }
 
   .auth-sidebar {
     background: #6930c3;
     display: flex;
-    width: 40%;
-    height: 100vh;
     justify-content: center;
     text-align: center;
 
@@ -87,8 +119,7 @@
 
   .auth-content {
     text-align: center;
-    width: 60%;
-    height: 100%;
+
 
     h1 {
       font: bold 32px/38px "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
