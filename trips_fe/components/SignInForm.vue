@@ -47,7 +47,6 @@
         let user = await TripBeAPI.getUser(this.currentUserData.username);
         await this.$auth.$storage.setCookie('user', user, true);
         this.$router.push('home');
-        this.currentUserData = { username:'', password:'' }; //clean sensitive datas
         
       }catch(error){
         this.isSignInError = true;
