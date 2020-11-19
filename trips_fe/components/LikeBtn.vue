@@ -1,7 +1,7 @@
 <template>
   <div class="like-btn">
     <div :class="['heart', { 'is-active': toggled }]" @click="like()"></div>
-    <b>{{likesFacade}} personas lo desean.</b>
+    <b>{{likesFacade}} persona(s) lo desean.</b>
   </div>
 </template>
 

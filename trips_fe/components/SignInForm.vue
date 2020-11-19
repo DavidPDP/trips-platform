@@ -1,17 +1,17 @@
 <template>
   <v-form class="singin-form">
-    <h1><b>Welcome Back</b></h1>
-    <h4>To keep connected with us please login with your personal info.</h4>
-    <v-text-field v-model="currentUserData.username" color="#5e60ce" label="Username" prepend-inner-icon="mdi-account">
+    <h1><b>Bienvenido</b></h1>
+    <h4>Para mantenerse conectado con nosotros, inicie sesión con su información personal.</h4>
+    <v-text-field v-model="currentUserData.username" color="#5e60ce" label="Usuario" prepend-inner-icon="mdi-account">
     </v-text-field>
     <v-text-field v-model="currentUserData.password" color="#5e60ce" class="input-group--focused" 
       prepend-inner-icon="mdi-lock" :append-icon="isPasswordVisible ? 'mdi-eye' : 'mdi-eye-off'"
       :rules="[rules.required]" :type="isPasswordVisible ? 'text' : 'password'"
-      name="input-10-2" label="Password" hint="At least 8 characters"
+      name="input-10-2" label="Contraseña" hint="At least 8 characters"
       value="" @click:append="isPasswordVisible = !isPasswordVisible">
     </v-text-field>
-    <v-btn color="#5e60ce" class="white--text" @click="trySignIn()">Sign In</v-btn>
-    <label class="form__error-text" v-if="isSignInError">Username or password incorrect. Please try again.</label>
+    <v-btn color="#5e60ce" class="white--text" @click="trySignIn()">Ingresar</v-btn>
+    <label class="form__error-text" v-if="isSignInError">Usuario o contraseña incorrecta. Por favor intente de nuevo.</label>
   </v-form>
 </template>
 

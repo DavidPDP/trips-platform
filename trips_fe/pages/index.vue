@@ -1,7 +1,12 @@
 <template>
   <div class="main-container">
     <section class="auth-sidebar">
-      <h1>Adventure is worthwhile Feed your soul.</h1>
+      <h1>La aventura vale la pena Alimenta tu alma.</h1>
+      <div class="auth-sidebar__logo">
+        <v-img style="margin: 0 0 0 10%;" src="/logo.png" max-height="100" max-width="114"></v-img>
+        <p>Stroll App</p>
+      </div>
+      <p></p>
     </section>
     <section class="auth-content">
       <nav>
@@ -32,17 +37,17 @@
     signInVisible: boolean = true;
     notification: boolean = false;
     notificationText: string = '';
-    navText: string = 'Not a member? ';
-    navLinkText: string = 'Sign up now.';
+    navText: string = '¿No es un miembro? ';
+    navLinkText: string = 'Regístrate ahora.';
 
     switchSignForm() {
       if (this.signInVisible) {
-        this.navText = 'Already a member? ';
-        this.navLinkText = 'Login now.';
+        this.navText = '¿Ya eres usuario? ';
+        this.navLinkText = 'Inicia sesión ahora.';
         this.signInVisible = false;
       } else {
-        this.navText = 'Not a member? ';
-        this.navLinkText = 'Sign up now.';
+        this.navText = '¿No es un miembro? ';
+        this.navLinkText = 'Regístrate ahora.';
         this.signInVisible = true;
       }
     }
@@ -59,6 +64,7 @@
 
 <style lang="scss">
   @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
   .main-container {
     display: flex;
@@ -74,6 +80,18 @@
       .auth-sidebar{
         width: 70%;
         height: 100vh;
+
+        .auth-sidebar__logo {
+          align-items: center;
+        }
+
+        h1 {
+          font-size: 30px;
+        }
+
+        p {
+          font-size: 60px;
+        }
       }
 
       .auth-content{
@@ -92,6 +110,21 @@
       .auth-sidebar{
         width: 100vw;
         height: 30%;
+
+        .auth-sidebar__logo {
+          flex-direction: row;
+          justify-content: center;
+          height: 95px;
+        }
+
+        h1 {
+          font-size: 20px;
+        }
+
+        p {
+          font-size: 40px;
+          
+        }
       }
 
       .auth-content{
@@ -105,14 +138,25 @@
   .auth-sidebar {
     background: #6930c3;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
+
+    .auth-sidebar__logo {
+      display: flex; 
+      flex-direction: column;
+    }
 
     h1 {
       color: #f8f8ff;
       padding: 10% 10% 2% 10%;
-      font-family: Poppins;
-      font-size: 30px;
+      font-family: 'Poppins';
+    }
+
+    p {
+      font-family: 'Dancing Script', cursive;
+      color: #f8f8ff;
+      font-size: 60px;
     }
 
   }

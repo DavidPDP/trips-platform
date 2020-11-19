@@ -1,7 +1,10 @@
 <template>
   <v-app dark>
-    <v-app-bar dense style="display: flex; justify-content: flex-end;" fixed app src="/banner.jpg">
-      <v-menu bottom min-width="300px" rounded offset-y>
+    <v-app-bar dense fixed app src="/banner.jpg">
+      <v-img src="/logo.png" max-height="50" max-width="50"></v-img>
+      <p class="menu-bar__title">Stroll App</p>  
+      <v-spacer></v-spacer>
+      <v-menu left bottom min-width="300px" rounded offset-y>
         <template v-slot:activator="{ on }">
           <v-btn icon x-large v-on="on">
             <v-avatar size="36">
@@ -78,3 +81,14 @@
   }
 
 </script>
+
+<style scoped>
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+  .menu-bar__title {
+    font-family: 'Dancing Script', cursive;
+    color: #f8f8ff;
+    font-size: 35px;
+    padding: 1% 0 0 1%;
+  }
+</style>

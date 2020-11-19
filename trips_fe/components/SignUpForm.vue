@@ -1,22 +1,22 @@
 <template>
   <v-form class="singup-form">
-    <h1><b>Sign Up</b></h1>
-    <h4>It's quick and easy.</h4>
-    <v-text-field v-model="currentUserData.username" color="#5e60ce" label="Username" prepend-inner-icon="mdi-account"></v-text-field>
+    <h1><b>Regístrate</b></h1>
+    <h4>Es rápido y sencillo.</h4>
+    <v-text-field v-model="currentUserData.username" color="#5e60ce" label="Usuario" prepend-inner-icon="mdi-account"></v-text-field>
     <v-text-field v-model="currentUserData.email" color="#5e60ce" label="Email" prepend-inner-icon="mdi-account"></v-text-field>
     <v-text-field v-model="currentUserData.password" color="#5e60ce" class="input-group--focused" 
       prepend-inner-icon="mdi-lock" :append-icon="isPasswordVisible ? 'mdi-eye' : 'mdi-eye-off'"
       :rules="[rules.required]" :type="isPasswordVisible ? 'text' : 'password'"
-      name="input-10-2" label="Password" hint="At least 8 characters"
+      name="input-10-2" label="Contraseña" hint="At least 8 characters"
       value="" @click:append="isPasswordVisible = !isPasswordVisible">
     </v-text-field>
     <v-text-field v-model="passwordRepeat" color="#5e60ce" class="input-group--focused" 
       prepend-inner-icon="mdi-lock" :append-icon="isPasswordVisible ? 'mdi-eye' : 'mdi-eye-off'"
       :rules="[rules.required]" :type="isPasswordVisible ? 'text' : 'password'"
-      name="input-10-2" label="Repeat Password" hint="At least 8 characters"
+      name="input-10-2" label="Confirme Contraseña" hint="At least 8 characters"
       value="" @click:append="isPasswordVisible = !isPasswordVisible">
     </v-text-field>
-    <v-btn @click="trySignUp()" color="#5e60ce" class="white--text">Create Account</v-btn>
+    <v-btn @click="trySignUp()" color="#5e60ce" class="white--text">Crear Cuenta</v-btn>
     <label class="form__error-text" v-if="isSignInError">{{ signInError }}</label>
   </v-form>
 </template>
